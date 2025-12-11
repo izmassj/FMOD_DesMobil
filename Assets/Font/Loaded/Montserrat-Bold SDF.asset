@@ -4269,7 +4269,7 @@ MonoBehaviour:
   m_ClearDynamicDataOnBuild: 0
   m_AtlasWidth: 512
   m_AtlasHeight: 512
-  m_AtlasPadding: 0
+  m_AtlasPadding: 3
   m_AtlasRenderMode: 4165
   m_UsedGlyphRects:
   - m_X: 0
