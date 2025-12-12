@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{177af2f6-d5a4-4d7b-8d79-21baa025778f}">
+		<property name="assetPath">
+			<value>Wii Shop Channel Main Theme (HQ) - Rhythm Root.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>128.40000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e078ad3e-139e-4672-bcc7-3b68e2c2c2a6}</destination>
+		</relationship>
+	</object>
+</objects>

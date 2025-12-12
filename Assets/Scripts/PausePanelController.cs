@@ -1,8 +1,9 @@
+using FMOD.Studio;
+using FMODUnity;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using FMODUnity;
-using FMOD.Studio;
 
 public class PausePanelController : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class PausePanelController : MonoBehaviour
 
     [Header("Input Actions")]
     [SerializeField] private InputActionAsset inputActions;
+
+    [Header("Audio")]
+    [SerializeField] StudioEventEmitter bckgMusicEventEmitter;
 
     private bool isPaused = false;
     private InputAction pauseAction;
@@ -55,10 +59,8 @@ public class PausePanelController : MonoBehaviour
 
     void SetupSliders()
     {
-        // Configurar Master Volume Slider
         if (masterVolumeSlider != null)
         {
-            // Obtener volumen actual del VCA master
             if (masterVCA.isValid())
             {
                 masterVCA.getVolume(out float currentMasterVolume);
@@ -73,13 +75,11 @@ public class PausePanelController : MonoBehaviour
             masterVolumeSlider.onValueChanged.AddListener(SetGeneralVolume);
         }
 
-        // Configurar Music Volume Slider
         if (musicVolumeSlider != null)
         {
-            // Obtener volumen actual del VCA music
             if (musicVCA.isValid())
             {
-                musicVCA.getVolume(out float currentMusicVolume); // CORREGIDO: usar musicVCA
+                musicVCA.getVolume(out float currentMusicVolume); 
                 musicVolumeSlider.value = currentMusicVolume;
             }
             else
@@ -91,13 +91,11 @@ public class PausePanelController : MonoBehaviour
             musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
         }
 
-        // Configurar SFX Volume Slider
         if (sfxVolumeSlider != null)
         {
-            // Obtener volumen actual del VCA sfx
             if (sfxVCA.isValid())
             {
-                sfxVCA.getVolume(out float currentSfxVolume); // CORREGIDO: usar sfxVCA
+                sfxVCA.getVolume(out float currentSfxVolume); 
                 sfxVolumeSlider.value = currentSfxVolume;
             }
             else
@@ -127,7 +125,7 @@ public class PausePanelController : MonoBehaviour
     {
         if (musicVCA.isValid())
         {
-            musicVCA.setVolume(volume); // CORREGIDO: usar musicVCA
+            musicVCA.setVolume(volume); 
             Debug.Log($"Music Volume set to: {volume}");
         }
         else
@@ -140,7 +138,7 @@ public class PausePanelController : MonoBehaviour
     {
         if (sfxVCA.isValid())
         {
-            sfxVCA.setVolume(volume); // CORREGIDO: usar sfxVCA
+            sfxVCA.setVolume(volume); 
             Debug.Log($"SFX Volume set to: {volume}");
         }
         else
@@ -162,10 +160,12 @@ public class PausePanelController : MonoBehaviour
         if (isPaused)
         {
             ResumeGame();
+            bckgMusicEventEmitter.EventInstance.setPaused(false);
         }
         else
         {
             PauseGame();
+            bckgMusicEventEmitter.EventInstance.setPaused(true);
         }
     }
 
@@ -218,7 +218,6 @@ public class PausePanelController : MonoBehaviour
             sfxVolumeSlider.onValueChanged.RemoveListener(SetSFXVolume);
     }
 
-    // Método para manejar el botón de reanudar en la UI
     public void OnResumeButtonClicked()
     {
         ResumeGame();

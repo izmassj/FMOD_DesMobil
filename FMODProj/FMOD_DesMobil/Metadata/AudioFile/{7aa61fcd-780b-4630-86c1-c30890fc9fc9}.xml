@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{7aa61fcd-780b-4630-86c1-c30890fc9fc9}">
+		<property name="assetPath">
+			<value>st3-footstep-sfx-323056.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.44408163265306122</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e078ad3e-139e-4672-bcc7-3b68e2c2c2a6}</destination>
+		</relationship>
+	</object>
+</objects>

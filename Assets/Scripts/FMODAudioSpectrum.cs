@@ -7,8 +7,8 @@ class ScriptUsageLowLevel : MonoBehaviour
 {
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] string VCAPath = "vca:/General"; 
-    [SerializeField] float WIDTH = -20.0f;
-    [SerializeField] float HEIGHT = 0.2f;
+    [SerializeField] float WIDTH;
+    [SerializeField] float HEIGHT;
 
     FMOD.DSP fft;
     FMOD.Studio.VCA vca;

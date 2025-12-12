@@ -424,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 255904108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9, y: -5.09, z: -0.07510423}
+  m_LocalPosition: {x: -4.5, y: -5.09, z: -0.07510423}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -444,8 +444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 255904113}
   VCAPath: vca:/General
-  WIDTH: -10
-  HEIGHT: 0.2
+  WIDTH: -27
+  HEIGHT: 0.05
 --- !u!120 &255904113
 LineRenderer:
   serializedVersion: 2
@@ -1604,7 +1604,7 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params:
   - Name: Volumen
-    Value: 1
+    Value: 0.7
   - Name: Reverb
     Value: 0
   OverrideAttenuation: 0
@@ -1628,6 +1628,7 @@ MonoBehaviour:
   musicVolumeSlider: {fileID: 601407876}
   sfxVolumeSlider: {fileID: 2005319130}
   inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  bckgMusicEventEmitter: {fileID: 255904114}
 --- !u!1 &279060572
 GameObject:
   m_ObjectHideFlags: 0
